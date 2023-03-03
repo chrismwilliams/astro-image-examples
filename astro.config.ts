@@ -3,9 +3,10 @@ import image from "@astrojs/image";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [
-    image({
-      serviceEntryPoint: "@astrojs/image/sharp",
-    }),
-  ],
+	site: "https://astro-image-examples.netlify.app/",
+	integrations: [
+		image({
+			serviceEntryPoint: "@astrojs/image/sharp",
+		}),
+	],
 });
