@@ -1,0 +1,36 @@
+---
+import styles from "../styles.module.css";
+---
+
+<div>
+	<p>
+		Inspired by <a
+			href="https://image-component.nextjs.gallery/"
+			target="_blank"
+			rel="noopener noreferrer nofollow"
+			class={styles.inlineLink}>Vercel Image Component</a
+		>
+	</p>
+	<p>
+		Made By <a
+			href="https://github.com/chrismwilliams"
+			target="_blank"
+			rel="noopener noreferrer nofollow"
+			class={styles.inlineLink}>Chris Williams</a
+		>
+	</p>
+</div>
+
+<style>
+	div {
+		padding: 2.5rem 0;
+		display: grid;
+		gap: 0.5rem;
+		place-content: center;
+		text-align: center;
+		border-top: 1px solid rgb(51 65 85);
+	}
+	p {
+		margin: 0;
+	}
+</style>

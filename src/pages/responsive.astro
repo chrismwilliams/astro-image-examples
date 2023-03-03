@@ -1,0 +1,53 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image, Picture } from "@astrojs/image/components";
+import ImageLabel from "../components/ImageLabel.astro";
+import styles from "../styles.module.css";
+
+import nasaImg from "../assets/nasa.jpg";
+---
+
+<Layout title="Responsive Astro Image Example.">
+	<div class={styles.container}>
+		<div class={styles.card}>
+			<h1 class={styles.heading}>Layout Responsive Example</h1>
+			<p>
+				Image found in <code class={styles.inlineCode}>/assets/nasa.jpg</code> and sourced via Nasa @
+				<a
+					href="https://unsplash.com/photos/yZygONrUBe8"
+					target="_blank"
+					rel="noopener noreferrer nofollow"
+					class={styles.inlineLink}>unsplash.com</a
+				>
+			</p>
+		</div>
+		<br />
+		<br />
+		<br />
+		<ImageLabel text="<Image>" />
+		<Image
+			alt="The space station above the Earth"
+			src={nasaImg}
+			style={{
+				width: "100%",
+				height: "auto",
+			}}
+		/>
+		<br />
+		<br />
+		<br />
+		<ImageLabel text="<Picture>" />
+		<Picture
+			alt="The space station above the Earth"
+			src={nasaImg}
+			sizes="100vw"
+			widths={[800, 1200, 2800]}
+			style={{
+				maxWidth: "100%",
+				height: "auto",
+			}}
+		/>
+	</div>
+</Layout>
+
+<style></style>

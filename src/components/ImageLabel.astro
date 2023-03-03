@@ -1,0 +1,26 @@
+---
+interface Props {
+	text: string;
+}
+
+const { text } = Astro.props;
+---
+
+<span class="image-label"><p>{text}</p></span>
+
+<style>
+	.image-label {
+		display: inline-block;
+		border: 1px solid rgb(168 85 247);
+		border-bottom-width: 0px;
+		border-top-left-radius: 0.25rem;
+		border-top-right-radius: 0.25rem;
+		background-color: rgb(88 28 135);
+		box-shadow: 0px -3px 18px rgb(168 85 247 / 50%);
+	}
+	.image-label p {
+		font-weight: 800;
+		margin: 0;
+		padding: 0.25rem 0.5rem;
+	}
+</style>

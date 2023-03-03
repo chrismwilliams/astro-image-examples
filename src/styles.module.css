@@ -1,0 +1,57 @@
+.container {
+	padding: 4rem 2rem;
+}
+
+.container p {
+	margin: 1.5rem 0;
+}
+
+.card {
+	max-width: 60rem;
+	box-shadow: 0px 0px 50px rgb(168 85 247 / 0.5);
+	border: 1px solid #c084fc80;
+	border-radius: 8px;
+	padding: 2rem;
+	margin: 0 auto;
+}
+
+.inlineCode {
+	font-weight: bold;
+	white-space: pre-wrap;
+	background: rgba(var(--accent), 12%);
+	border-radius: 4px;
+	padding: 0.3em 0.45em;
+}
+
+.hr {
+	border: 0;
+	border-top: 1px solid rgb(51 65 85);
+	margin: 3rem 0;
+}
+
+.textGradient {
+	background-image: var(--accent-gradient);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-size: 400%;
+	background-position: 0%;
+}
+
+.heading {
+	font-size: 3rem;
+	font-weight: 800;
+	margin: 0;
+}
+
+.inlineLink {
+	color: white;
+	font-weight: 500;
+	cursor: pointer;
+	text-decoration: none;
+	transition: all 0.2s ease;
+	border-bottom: 2px solid white;
+}
+
+.inlineLine:hover {
+	border-bottom-color: #a78bfa;
+}

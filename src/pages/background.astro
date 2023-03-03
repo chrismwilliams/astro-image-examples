@@ -1,0 +1,91 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image, Picture } from "@astrojs/image/components";
+import styles from "../styles.module.css";
+
+import nasaImg from "../assets/nasa.jpg";
+import ImageLabel from "../components/ImageLabel.astro";
+---
+
+<Layout title="Background Astro Image Example.">
+	<div class={styles.container}>
+		<div class={styles.card}>
+			<h1 class={styles.heading}>Background Image Example</h1>
+			<p>
+				Image found in <code class={styles.inlineCode}>/assets/nasa.jpg</code> and sourced via Nasa @
+				<a
+					href="https://unsplash.com/photos/yZygONrUBe8"
+					target="_blank"
+					rel="noopener noreferrer nofollow"
+					class={styles.inlineLink}>unsplash.com</a
+				>
+			</p>
+		</div>
+		<br />
+		<br />
+		<br />
+		<ImageLabel text="<Image>" />
+		<div class="background-wrapper">
+			<Image
+				alt="The space station above the Earth"
+				src={nasaImg}
+				style={{
+					objectFit: "cover",
+					height: "min(60vh, 600px)",
+					width: "100%",
+				}}
+			/>
+			<div class="background-content test">
+				<h2>Overly text on an image background</h2>
+			</div>
+		</div>
+		<br />
+		<br />
+		<br />
+		<ImageLabel text="<Picture>" />
+		<div class="background-wrapper">
+			<div>
+				<Picture
+					alt="The space station above the Earth"
+					src={nasaImg}
+					sizes="100vw"
+					widths={[800, 1200, 2800]}
+					style={{
+						objectFit: "cover",
+						height: "min(60vh, 600px)",
+						width: "100%",
+					}}
+				/>
+			</div>
+			<div class="background-content"><h2>Overly text on an image background</h2></div>
+		</div>
+	</div>
+</Layout>
+
+<style>
+	.background-wrapper {
+		display: grid;
+		grid-template-areas: "stack";
+	}
+	.background-wrapper :global(img, picture) {
+		display: block;
+	}
+	/* Issue with the picture element [astro #5476], hence adding a parent div */
+	.background-wrapper > * {
+		grid-area: stack;
+	}
+	.background-content {
+		place-self: center;
+		text-align: center;
+		padding: 1rem;
+		background-color: rgb(88 28 135 / 0.75);
+		border: 1px solid rgb(168 85 247);
+		border-radius: 0.25rem;
+		box-shadow: 0px -3px 18px rgb(168 85 247 / 50%);
+	}
+	.background-content h2 {
+		text-transform: capitalize;
+		font-size: clamp(1.35rem, 5vw, 2rem);
+		line-height: 1.3;
+	}
+</style>

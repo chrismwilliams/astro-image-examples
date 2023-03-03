@@ -1,51 +1,114 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import styles from "../styles.module.css";
+
+import { Image, Picture } from "@astrojs/image/components";
+import ImageLabel from "../components/ImageLabel.astro";
+import astroImg from "../assets/astro.png";
 ---
 
 <Layout title="Welcome to Astro Image Component.">
-	<main>
-		<h1><span class="text-gradient">Astro</span> Image Component</h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.
-		</p>
-	</main>
+	<div class={styles.container}>
+		<div class={styles.card}>
+			<h1 class={styles.heading}>
+				<span class={styles.textGradient}>@astrojs</span>/image examples
+			</h1>
+			<p>
+				This page demonstrates the usage of the{" "}
+				<a
+					target="_blank"
+					rel="noopener noreferrer nofollow"
+					href="https://docs.astro.build/en/guides/integrations-guide/image/"
+					class={styles.inlineLink}
+				>
+					@astrojs/image</a
+				>{" "}
+				component with examples.
+			</p>
+			<p>
+				Both <code class={styles.inlineCode}>&lt;Image&gt;</code> and <code
+					class={styles.inlineCode}>&lt;Picture&gt;</code
+				> components are designed to{" "}
+				<a
+					href="https://docs.astro.build/en/guides/integrations-guide/image/#why-astrojsimage"
+					target="_blank"
+					rel="noopener noreferrer nofollow"
+					class={styles.inlineLink}
+				>
+					automatically optimize</a
+				>{" "}
+				images on-demand as the browser requests them.
+			</p>
+			<p>
+				Note: Images placed in <code class={styles.inlineCode}>/public</code> can still be used with
+				both components, an unprocessed copy of the original image will be moved to the build folder
+			</p>
+			<hr class={styles.hr} />
+			<h2 id="internal">Internal Image</h2>
+			<p>
+				Here is an example using an internal image, the location of which can be found in {" "}
+				<code class={styles.inlineCode}>src/assets</code>, and the source found <a
+					href="https://astro.build/press/"
+				>
+					here</a
+				>.
+			</p>
+			<ImageLabel text="<Image>" />
+			<Image
+				alt="Astro logo"
+				src={astroImg}
+				style={{
+					maxWidth: "100%",
+					height: "auto",
+				}}
+			/>
+			<br />
+			<br />
+			<br />
+			<ImageLabel text="<Picture>" />
+			<Picture
+				alt="Astro logo"
+				src={astroImg}
+				sizes="100vw"
+				widths={[960, 1600]}
+				style={{ maxWidth: "100%" }}
+			/>
+			<hr class={styles.hr} />
+			<h2 id="external">External Image</h2>
+			<p>
+				The following is an example of a reference to an external image found @{" "}
+				<a
+					href="https://astro.build/press/"
+					target="_blank"
+					rel="noopener noreferrer nofollow"
+					class={styles.inlineLink}
+				>
+					astro.build/press</a
+				>.
+			</p>
+			<ImageLabel text="<Image>" />
+			<Image
+				alt="Astro logo"
+				src="https://astro.build/assets/press/full-logo-dark.png"
+				width={1517}
+				height={500}
+				style={{
+					width: "100%",
+					height: "auto",
+				}}
+			/>
+			<br />
+			<br />
+			<br />
+			<ImageLabel text="<Picture>" />
+			<Picture
+				alt="Astro logo"
+				src="https://astro.build/assets/press/full-logo-dark.png"
+				sizes="100vw"
+				widths={[960, 1517]}
+				aspectRatio={1517 / 500}
+				style={{ width: "100%" }}
+			/>
+		</div>
+	</div>
 </Layout>
-
-<style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-</style>
