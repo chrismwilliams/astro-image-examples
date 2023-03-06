@@ -14,6 +14,7 @@ import styles from "../styles.module.css";
 		target="_blank"
 		rel="noopener noreferrer nofollow"
 		class="github"
+		title="View source"
 		><svg
 			xmlns="http://www.w3.org/2000/svg"
 			viewBox="0 0 24 24"
@@ -33,46 +34,84 @@ import styles from "../styles.module.css";
 
 <style>
 	header {
-		padding: 2rem;
+		padding: 2rem 0.5rem;
 		display: flex;
+		flex-direction: column;
 		gap: 2em;
 		align-items: center;
 	}
+	@media (min-width: 768px) {
+		header {
+			padding: 2rem;
+			flex-direction: row;
+		}
+	}
+
 	.logo {
 		font-size: 1.5em;
 		font-weight: 800;
 	}
+
 	nav {
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		column-gap: 2em;
-		margin-left: auto;
 	}
+
 	nav a {
 		display: block;
 		border-bottom: 2px solid transparent;
 	}
+
 	nav a:hover {
 		border-bottom-color: white;
 	}
+
+	@media (min-width: 768px) {
+		nav {
+			margin-left: auto;
+		}
+	}
+
 	a {
 		text-decoration: none;
 		color: white;
 	}
+
 	.github {
 		display: flex;
-		justify-content: center;
-		align-items: center;
+		position: absolute;
+		top: 0px;
+		right: 0px;
+		width: 80px;
+		height: 80px;
+		justify-content: flex-end;
+		align-items: flex-start;
 		padding: 0.75rem;
-		border: 1px solid transparent;
-		border-radius: 0.75rem;
 		background-color: rgb(255 255 255 / 0.2);
+		clip-path: polygon(100% 0, 0 0, 100% 100%);
+		overflow: hidden;
 	}
+
+	@media (min-width: 768px) {
+		.github {
+			width: auto;
+			height: auto;
+			justify-content: center;
+			align-items: center;
+			border: 1px solid transparent;
+			border-radius: 0.75rem;
+			position: static;
+			clip-path: none;
+		}
+	}
+
 	.github svg {
 		width: 25px;
 		height: 25px;
 	}
+
 	.github:hover {
 		border-color: white;
 	}

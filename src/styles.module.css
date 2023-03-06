@@ -1,5 +1,5 @@
 .container {
-	padding: 4rem 2rem;
+	padding: 1.5rem 0.5rem;
 }
 
 .container p {
@@ -38,7 +38,7 @@
 }
 
 .heading {
-	font-size: 3rem;
+	font-size: clamp(1.35rem, 5vw, 3rem);
 	font-weight: 800;
 	margin: 0;
 }
@@ -54,4 +54,10 @@
 
 .inlineLine:hover {
 	border-bottom-color: #a78bfa;
+}
+
+@media (min-width: 768px) {
+	.container {
+		padding: 4rem 2rem;
+	}
 }
