@@ -1,0 +1,15 @@
+---
+import { Image } from "astro:assets";
+// example local image
+import astroImg from "../../assets/astro-logo.png";
+---
+
+<Image alt="Astro logo" src={astroImg} />
+
+<style>
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+</style>

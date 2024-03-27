@@ -10,4 +10,7 @@ export default defineConfig({
 			themes: ["dracula-soft"],
 		}),
 	],
+	image: {
+		domains: ["astro.build"],
+	},
 });
