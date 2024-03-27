@@ -1,12 +1,13 @@
 import { defineConfig } from "astro/config";
-import image from "@astrojs/image";
+
+import expressiveCode from "astro-expressive-code";
 
 // https://astro.build/config
 export default defineConfig({
 	site: "https://astro-image-examples.netlify.app/",
 	integrations: [
-		image({
-			serviceEntryPoint: "@astrojs/image/sharp",
+		expressiveCode({
+			themes: ["dracula-soft"],
 		}),
 	],
 });
