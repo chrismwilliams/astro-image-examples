@@ -1,0 +1,62 @@
+---
+type Props = {
+  label: string;
+  name: string;
+  open?: boolean;
+};
+
+const { label, name, open = false } = Astro.props;
+---
+
+<details class="tab-item" name={name} open={open}>
+  <summary class="tab-item_summary">{label}</summary>
+  <div class="tab-item_content">
+    <slot />
+  </div>
+</details>
+
+<style>
+  .tab-item {
+    display: contents;
+    &[open] {
+      & > .tab-item_summary {
+        border-color: var(--color-primary);
+        background-color: rgb(88 28 135);
+      }
+    }
+  }
+
+  .tab-item_summary {
+    padding: 0.5rem 1rem;
+    font-size: 1.1rem;
+    color: #ffffffcc;
+    font-weight: 600;
+    display: block;
+    order: 0;
+    background: #ffffff13;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    margin-right: 0.35rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    border: 2px solid transparent;
+    &:hover,
+    &:focus {
+      border-color: #fff;
+    }
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+
+  .tab-item_content {
+    order: 1;
+    width: 100%;
+    details {
+      summary {
+        font-weight: 600;
+      }
+      margin: 1.5rem;
+    }
+  }
+</style>
