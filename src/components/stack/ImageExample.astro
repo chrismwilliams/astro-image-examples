@@ -4,15 +4,15 @@ import { Image } from "astro:assets";
 import nasaImg from "../../assets/nasa.jpg";
 ---
 
-<div class="background-wrapper">
+<div class="wrapper">
   <Image alt="The space station above the Earth" src={nasaImg} />
-  <div class="background-content">
-    <h2>Overly text on an image background</h2>
+  <div class="content">
+    <h2>Overly text on an image</h2>
   </div>
 </div>
 
 <style>
-  .background-wrapper {
+  .wrapper {
     display: grid;
     grid-template-areas: "stack";
   }
@@ -24,11 +24,11 @@ import nasaImg from "../../assets/nasa.jpg";
     height: auto;
   }
 
-  .background-wrapper > * {
+  .wrapper > * {
     grid-area: stack;
   }
 
-  .background-content {
+  .content {
     place-self: center;
     text-align: center;
     margin-inline: 1rem;
@@ -39,7 +39,7 @@ import nasaImg from "../../assets/nasa.jpg";
     box-shadow: 0px -3px 18px rgb(168 85 247 / 50%);
   }
 
-  .background-content h2 {
+  .content h2 {
     text-transform: capitalize;
     font-size: clamp(1.35rem, 5vw, 2rem);
     line-height: 1.3;

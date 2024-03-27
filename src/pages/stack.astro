@@ -4,16 +4,16 @@ import Layout from "../layouts/Layout.astro";
 import Tabs from "../components/Tabs.astro";
 import TabItem from "../components/TabItem.astro";
 
-import BackgroundImage from "../components/background/ImageExample.astro";
-import BackgroundImageCode from "../components/background/ImageExample.astro?raw";
-import BackgroundPicture from "../components/background/PictureExample.astro";
-import BackgroundPictureCode from "../components/background/PictureExample.astro?raw";
+import StackImage from "../components/stack/ImageExample.astro";
+import StackImageCode from "../components/stack/ImageExample.astro?raw";
+import StackPicture from "../components/stack/PictureExample.astro";
+import StackPictureCode from "../components/stack/PictureExample.astro?raw";
 ---
 
-<Layout title="Astro Image Examples - Background">
+<Layout title="Astro Image Examples - Stack">
   <div class="container">
     <div class="card">
-      <h1 class="heading">Background Examples.</h1>
+      <h1 class="heading">Stack Examples.</h1>
       <p>
         Image found in <code class="inlineCode">src/assets/nasa.jpg</code> and sourced via Nasa @
         <a
@@ -29,10 +29,10 @@ import BackgroundPictureCode from "../components/background/PictureExample.astro
     <br />
     <Tabs>
       <TabItem name="background-image" label="<Image>" open>
-        <BackgroundImage />
+        <StackImage />
       </TabItem>
       <TabItem name="background-image" label="<Code>">
-        <Code code={BackgroundImageCode} lang="astro" title="background-image.astro" />
+        <Code code={StackImageCode} lang="astro" title="background-image.astro" />
       </TabItem>
     </Tabs>
     <br />
@@ -40,10 +40,10 @@ import BackgroundPictureCode from "../components/background/PictureExample.astro
     <br />
     <Tabs>
       <TabItem name="background-picture" label="<Picture>" open>
-        <BackgroundPicture />
+        <StackPicture />
       </TabItem>
       <TabItem name="background-picture" label="<Code>">
-        <Code code={BackgroundPictureCode} lang="astro" title="background-picture.astro" />
+        <Code code={StackPictureCode} lang="astro" title="background-picture.astro" />
       </TabItem>
     </Tabs>
   </div>
