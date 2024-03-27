@@ -1,0 +1,21 @@
+---
+import { Picture } from "astro:assets";
+// example local image
+import nasaImg from "../../assets/nasa.jpg";
+---
+
+<Picture
+  alt="The space station above the Earth"
+  src={nasaImg}
+  width={nasaImg.width / 2}
+  densities={[1.5, 2]}
+  pictureAttributes={{ style: "display: block;" }}
+/>
+
+<style>
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+</style>
