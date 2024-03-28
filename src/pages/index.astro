@@ -19,7 +19,7 @@ import remotePictureCode from "../components/remote/PictureExample.astro?raw";
   <div class="container">
     <div class="card">
       <h1 class="heading">
-        <span class="textGradient">Astro</span> image examples
+        <span class="textGradient">Astro</span> Image Examples
       </h1>
       <p>
         This page demonstrates the usage of the Astro{" "}
@@ -45,12 +45,17 @@ import remotePictureCode from "../components/remote/PictureExample.astro?raw";
       </p>
       <p>
         Note: Images placed in <code class="inlineCode">/public</code> can still be used with both components,
-        an unprocessed copy of the original image will be moved to the build folder.
+        an <a
+          href="https://docs.astro.build/en/guides/images/#src-vs-public"
+          class="inlineLink"
+          target="_blank"
+          rel="noopener noreferrer nofollow">unprocessed copy</a
+        > of the original image will be moved to the build folder.
       </p>
-      <hr class="hr" />
+      <hr />
       <h2 id="internal">Local Image.</h2>
       <p>
-        Here is an example using a local image, the location of which can be found in {" "}
+        Here is an basic example using a local image, the location of which can be found in {" "}
         <code class="inlineCode">src/assets</code>, and the image source found <a
           href="https://astro.build/press/"
           target="_blank"
@@ -65,7 +70,7 @@ import remotePictureCode from "../components/remote/PictureExample.astro?raw";
           <LocalImage />
         </TabItem>
         <TabItem name="internal-image" label="<Code>">
-          <Code code={localImageCode} lang="astro" title="local-image.astro" />
+          <Code code={localImageCode} lang="astro" />
         </TabItem>
       </Tabs>
       <br />
@@ -76,13 +81,13 @@ import remotePictureCode from "../components/remote/PictureExample.astro?raw";
           <LocalPicture />
         </TabItem>
         <TabItem name="internal-picture" label="<Code>">
-          <Code code={localPictureCode} lang="astro" title="local-picture.astro" />
+          <Code code={localPictureCode} lang="astro" />
         </TabItem>
       </Tabs>
-      <hr class="hr" />
+      <hr />
       <h2 id="external">External Image.</h2>
       <p>
-        The following is an example of a reference to an external image found @{" "}
+        The following are basic examples of referencing an external image, found @{" "}
         <a
           href="https://astro.build/press/"
           target="_blank"
@@ -97,7 +102,7 @@ import remotePictureCode from "../components/remote/PictureExample.astro?raw";
           <RemoteImage />
         </TabItem>
         <TabItem name="remote-image" label="<Code>">
-          <Code code={remoteImageCode} lang="astro" title="remote-image.astro" />
+          <Code code={remoteImageCode} lang="astro" />
         </TabItem>
       </Tabs>
       <br />
@@ -108,7 +113,7 @@ import remotePictureCode from "../components/remote/PictureExample.astro?raw";
           <RemotePicture />
         </TabItem>
         <TabItem name="remote-picture" label="<Code>">
-          <Code code={remotePictureCode} lang="astro" title="remote-picture.astro" />
+          <Code code={remotePictureCode} lang="astro" />
         </TabItem>
       </Tabs>
     </div>

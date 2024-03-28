@@ -61,7 +61,7 @@ p {
 	padding: 0.3em 0.45em;
 }
 
-.hr {
+hr {
 	border: 0;
 	border-top: 1px solid rgb(51 65 85);
 	margin: 3rem 0;
