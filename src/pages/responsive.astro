@@ -29,7 +29,7 @@ import responsivePictureCode from "../components/responsive/PictureExample.astro
     <br />
     <Tabs>
       <TabItem name="responsive-image" label="<Image>" open>
-        <ResponsiveImage />
+        <div class="resize"><ResponsiveImage /></div>
       </TabItem>
       <TabItem name="responsive-image" label="<Code>">
         <Code code={responsiveImageCode} lang="astro" />
@@ -40,7 +40,7 @@ import responsivePictureCode from "../components/responsive/PictureExample.astro
     <br />
     <Tabs>
       <TabItem name="responsive-picture" label="<Picture>" open>
-        <ResponsivePicture />
+        <div class="resize"><ResponsivePicture /></div>
       </TabItem>
       <TabItem name="responsive-picture" label="<Code>">
         <Code code={responsivePictureCode} lang="astro" />
@@ -48,3 +48,12 @@ import responsivePictureCode from "../components/responsive/PictureExample.astro
     </Tabs>
   </div>
 </Layout>
+
+<style>
+  .resize {
+    border: 1px dashed rgb(51 65 85);
+    padding: 0.5rem;
+    overflow: auto;
+    resize: horizontal;
+  }
+</style>
