@@ -1,0 +1,50 @@
+---
+import { Code } from "astro-expressive-code/components";
+import Layout from "../layouts/Layout.astro";
+import Tabs from "../components/Tabs.astro";
+import TabItem from "../components/TabItem.astro";
+
+import StackImage from "../components/stack/ImageExample.astro";
+import StackImageCode from "../components/stack/ImageExample.astro?raw";
+import StackPicture from "../components/stack/PictureExample.astro";
+import StackPictureCode from "../components/stack/PictureExample.astro?raw";
+---
+
+<Layout title="Astro Image Examples - Stack">
+  <div class="container">
+    <div class="card">
+      <h1 class="heading">Stack Examples.</h1>
+      <p>
+        Image found in <code class="inlineCode">src/assets/nasa.jpg</code> and sourced via Nasa @
+        <a
+          href="https://unsplash.com/photos/yZygONrUBe8"
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+          class="inlineLink">unsplash.com</a
+        >
+      </p>
+    </div>
+    <br />
+    <br />
+    <br />
+    <Tabs>
+      <TabItem name="stack-image" label="<Image>" open>
+        <StackImage />
+      </TabItem>
+      <TabItem name="stack-image" label="<Code>">
+        <Code code={StackImageCode} lang="astro" />
+      </TabItem>
+    </Tabs>
+    <br />
+    <br />
+    <br />
+    <Tabs>
+      <TabItem name="stack-picture" label="<Picture>" open>
+        <StackPicture />
+      </TabItem>
+      <TabItem name="stack-picture" label="<Code>">
+        <Code code={StackPictureCode} lang="astro" />
+      </TabItem>
+    </Tabs>
+  </div>
+</Layout>

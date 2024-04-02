@@ -1,0 +1,26 @@
+<div class="tabs">
+	<slot />
+</div>
+
+<style>
+	.tabs {
+		position: relative;
+		display: flex;
+		flex-wrap: wrap;
+	}
+</style>
+
+<script>
+	const detailTabs = document.querySelectorAll(".tab-item_summary");
+
+	detailTabs.forEach((tab) => {
+		tab.addEventListener("click", (e) => {
+			// check if the parent <details> is open, and prevent it from 'closing' if it is
+			const detailsElement = tab.parentElement;
+			if (detailsElement && detailsElement.hasAttribute("open")) {
+				console.log("parent is already open");
+				e.preventDefault();
+			}
+		});
+	});
+</script>

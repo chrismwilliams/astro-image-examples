@@ -1,0 +1,53 @@
+---
+import { Picture } from "astro:assets";
+// example local image
+import nasaImg from "../../assets/nasa.jpg";
+---
+
+<div class="wrapper">
+  <Picture
+    alt="The space station above the Earth"
+    src={nasaImg}
+    width={nasaImg.width / 2}
+    densities={[1.5, 2]}
+    pictureAttributes={{ style: "grid-area: stack;" }}
+  />
+  <div class="content"><h2>Overly text on Picture</h2></div>
+</div>
+
+<style>
+  .wrapper {
+    display: grid;
+    grid-template-areas: "stack";
+  }
+
+  /* Make images easier to work with */
+  img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .wrapper > * {
+    grid-area: stack;
+  }
+
+  .content {
+    place-self: center;
+    text-align: center;
+    margin-inline: 1rem;
+    padding: 2rem;
+    background-color: rgb(88 28 135 / 0.75);
+    border: 1px solid var(--color-primary);
+    border-radius: 0.25rem;
+    box-shadow: 0px -3px 18px rgb(168 85 247 / 50%);
+  }
+
+  .content h2 {
+    text-transform: capitalize;
+    font-size: clamp(1.35rem, 5vw, 2rem);
+    line-height: 1.3;
+  }
+</style>

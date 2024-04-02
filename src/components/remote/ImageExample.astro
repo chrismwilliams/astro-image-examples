@@ -1,0 +1,18 @@
+---
+import { Image } from "astro:assets";
+---
+
+<Image
+  alt="Astro logo"
+  src="https://astro.build/assets/press/astro-logo-light-gradient.png"
+  inferSize
+/>
+
+<style>
+  /* Make images easier to work with */
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+</style>

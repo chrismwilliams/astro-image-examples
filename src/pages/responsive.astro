@@ -1,54 +1,59 @@
 ---
+import { Code } from "astro-expressive-code/components";
 import Layout from "../layouts/Layout.astro";
-import { Image, Picture } from "@astrojs/image/components";
-import ImageLabel from "../components/ImageLabel.astro";
-import styles from "../styles.module.css";
+import Tabs from "../components/Tabs.astro";
+import TabItem from "../components/TabItem.astro";
 
-import nasaImg from "../assets/nasa.jpg";
+import ResponsiveImage from "../components/responsive/ImageExample.astro";
+import responsiveImageCode from "../components/responsive/ImageExample.astro?raw";
+import ResponsivePicture from "../components/responsive/PictureExample.astro";
+import responsivePictureCode from "../components/responsive/PictureExample.astro?raw";
 ---
 
-<Layout title="Responsive Astro Image Example.">
-	<div class={styles.container}>
-		<div class={styles.card}>
-			<h1 class={styles.heading}>Layout Responsive Example</h1>
-			<p>
-				Image found in <code class={styles.inlineCode}>src/assets/nasa.jpg</code> and sourced via Nasa
-				@
-				<a
-					href="https://unsplash.com/photos/yZygONrUBe8"
-					target="_blank"
-					rel="noopener noreferrer nofollow"
-					class={styles.inlineLink}>unsplash.com</a
-				>
-			</p>
-		</div>
-		<br />
-		<br />
-		<br />
-		<ImageLabel text="<Image>" />
-		<Image
-			alt="The space station above the Earth"
-			src={nasaImg}
-			style={{
-				width: "100%",
-				height: "auto",
-			}}
-		/>
-		<br />
-		<br />
-		<br />
-		<ImageLabel text="<Picture>" />
-		<Picture
-			alt="The space station above the Earth"
-			src={nasaImg}
-			sizes="100vw"
-			widths={[800, 1200, 2800]}
-			style={{
-				maxWidth: "100%",
-				height: "auto",
-			}}
-		/>
-	</div>
+<Layout title="Astro Image Examples - Responsive">
+  <div class="container">
+    <div class="card">
+      <h1 class="heading">Responsive Examples.</h1>
+      <p>
+        Image found in <code class="inlineCode">src/assets/nasa.jpg</code> and sourced via Nasa @
+        <a
+          href="https://unsplash.com/photos/yZygONrUBe8"
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+          class="inlineLink">unsplash.com</a
+        >
+      </p>
+    </div>
+    <br />
+    <br />
+    <br />
+    <Tabs>
+      <TabItem name="responsive-image" label="<Image>" open>
+        <div class="resize"><ResponsiveImage /></div>
+      </TabItem>
+      <TabItem name="responsive-image" label="<Code>">
+        <Code code={responsiveImageCode} lang="astro" />
+      </TabItem>
+    </Tabs>
+    <br />
+    <br />
+    <br />
+    <Tabs>
+      <TabItem name="responsive-picture" label="<Picture>" open>
+        <div class="resize"><ResponsivePicture /></div>
+      </TabItem>
+      <TabItem name="responsive-picture" label="<Code>">
+        <Code code={responsivePictureCode} lang="astro" />
+      </TabItem>
+    </Tabs>
+  </div>
 </Layout>
 
-<style></style>
+<style>
+  .resize {
+    border: 1px dashed rgb(51 65 85);
+    padding: 0.5rem;
+    overflow: auto;
+    resize: horizontal;
+  }
+</style>
